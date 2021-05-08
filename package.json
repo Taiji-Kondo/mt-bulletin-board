@@ -10,18 +10,8 @@
     "build-storybook": "build-storybook",
     "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
     "lint:fix": "eslint --fix . --ext .ts,.js,.tsx,.jsx",
-    "format": "prettier --write ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn lint:fix",
-      "yarn format"
-    ]
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "autoprefixer": "^9",
