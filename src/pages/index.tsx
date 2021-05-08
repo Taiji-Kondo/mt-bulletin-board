@@ -6,7 +6,7 @@ export default function Home(): JSX.Element {
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
@@ -14,6 +14,9 @@ export default function Home(): JSX.Element {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <p className="text-red-900">test</p>
+        <p className="text-2xl" style={{ display: 'block' }}>
+          hoge
+        </p>
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
@@ -51,7 +54,7 @@ export default function Home(): JSX.Element {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Powered by <img src="/public/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
