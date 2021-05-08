@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import Button from '../components/Button'
+
 export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
@@ -17,6 +19,7 @@ export default function Home(): JSX.Element {
         <p className="text-2xl" style={{ display: 'block' }}>
           hoge
         </p>
+        <Button />
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
