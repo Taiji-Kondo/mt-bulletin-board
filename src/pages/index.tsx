@@ -15,6 +15,7 @@ export default function Home(): JSX.Element {
         </h1>
         <p className="text-red-900">test</p>
         <p className="text-2xl" style={{ display: 'block' }}>hoge</p>
+        <p className="text-2xl" style={{ display: 'block' }}>hoge</p>
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
