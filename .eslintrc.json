@@ -13,12 +13,7 @@
       "version": "latest"
     }
   },
-  "plugins": [
-    "react-hooks",
-    "react",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react-hooks", "react", "@typescript-eslint", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
