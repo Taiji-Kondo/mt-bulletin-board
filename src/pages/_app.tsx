@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 import { AppProps } from 'next/app'
-import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
-import { ThemeProvider as MaterialUIThemeProvider } from '@material-ui/core/styles'
-import { StylesProvider } from '@material-ui/styles'
+import Head from 'next/head'
+import PropTypes from 'prop-types'
+import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import '@/styles/globals.css'
@@ -14,26 +14,31 @@ const client = new ApolloClient({
   cache,
 })
 
-const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   useEffect(() => {
-    const jssStyles: Element | null = document.querySelector('#jss-server-side')
+    const jssStyles = document.querySelector<HTMLElement>('#jss-server-side')
     if (jssStyles) {
       jssStyles.parentElement?.removeChild(jssStyles)
     }
   }, [])
 
   return (
-    <StylesProvider injectFirst>
-      <MaterialUIThemeProvider theme={theme}>
-        <StyledComponentsThemeProvider theme={theme}>
-          <CssBaseline />
-          <ApolloProvider client={client}>
-            <Component {...pageProps} />
-          </ApolloProvider>
-        </StyledComponentsThemeProvider>
-      </MaterialUIThemeProvider>
-    </StylesProvider>
+    <Fragment>
+      <Head>
+        <title>山の掲示板</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <ApolloProvider client={client}>
+          <Component {...pageProps} />
+        </ApolloProvider>
+      </ThemeProvider>
+    </Fragment>
   )
 }
 
-export default CustomApp
+MyApp.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired,
+}

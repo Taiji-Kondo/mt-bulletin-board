@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-
 import Button from '@/components/Button'
+import { Hello } from '@/components/Hello/Hello'
 
 export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>山の掲示板</title>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
@@ -20,6 +20,7 @@ export default function Home(): JSX.Element {
           hoge
         </p>
         <Button />
+        <Hello name={'test'} />
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>

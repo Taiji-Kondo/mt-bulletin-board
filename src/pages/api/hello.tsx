@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default (req, res) => {
-  res.statusCode = 200
-  res.json({ name: 'John Doe' })
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+export default (req: NextApiRequest, res: NextApiResponse): void => {
+  res.status(200).json({ name: 'John Doe' })
+  console.log(req)
 }
