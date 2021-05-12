@@ -2,6 +2,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
@@ -12,7 +13,12 @@
       "version": "latest"
     }
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "react-hooks",
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
