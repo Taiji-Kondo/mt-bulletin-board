@@ -10,13 +10,8 @@
   "colors": {
     "black": "#000",
     "white": "#fff",
-    "gray": "#231815",
-    "light-gray": "#a4a4a4",
-    "green": "#108a98",
-    "yellow": "#f8e384",
     "bg": {
-      "gray": "#dededf",
-      "light-green": "rgba(149,210,208, 0.2)"
+      "gray": "#dededf"
     },
     "btn": {
       "gray": "#e0dfd1"
@@ -26,7 +21,17 @@
     }
   },
   "fontFamily": {
-    "hiragino": ["ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "meiryo", "ＭＳ Ｐゴシック", "MS PGothic", "robot", "Droid Sans","sans-serif"]
+    "hiragino": [
+      "ヒラギノ角ゴ ProN W3",
+      "Hiragino Kaku Gothic ProN",
+      "メイリオ",
+      "meiryo",
+      "ＭＳ Ｐゴシック",
+      "MS PGothic",
+      "robot",
+      "Droid Sans",
+      "sans-serif"
+    ]
   },
   "lineHeight": {
     "1.2": "1.2",

@@ -83,43 +83,43 @@ module.exports = {
         '.overflow': {
           marginRight: 'calc(50% - 50vw)',
           marginLeft: 'calc(50% - 50vw)',
-        },
-        '.overflow-true': {
-          paddingRight: 'calc(50vw - 50%)',
-          paddingLeft: 'calc(50vw - 50%)',
-          marginRight: 'calc(50% - 50vw)',
-          marginLeft: 'calc(50% - 50vw)',
+          '&-true': {
+            paddingRight: 'calc(50vw - 50%)',
+            paddingLeft: 'calc(50vw - 50%)',
+            marginRight: 'calc(50% - 50vw)',
+            marginLeft: 'calc(50% - 50vw)',
+          },
         },
         '.flex-center': {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-        },
-        '.flex-center-x': {
-          display: 'flex',
-          justifyContent: 'center',
-        },
-        '.flex-center-y': {
-          display: 'flex',
-          alignItems: 'center',
-        },
-        '.flex-center-between': {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
+          '&-x': {
+            display: 'flex',
+            justifyContent: 'center',
+          },
+          '&-y': {
+            display: 'flex',
+            alignItems: 'center',
+          },
+          '&-between': {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          },
         },
         '.position': {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%,-50%)',
-        },
-        '.position-x': {
-          left: '50%',
-          transform: 'translateX(-50%)',
-        },
-        '.position-y': {
-          top: '50%',
-          transform: 'translateY(-50%)',
+          '&-x': {
+            left: '50%',
+            transform: 'translateX(-50%)',
+          },
+          '&-y': {
+            top: '50%',
+            transform: 'translateY(-50%)',
+          },
         },
         '.hover-opacity': {
           transition: 'opacity .3s ease-in',
