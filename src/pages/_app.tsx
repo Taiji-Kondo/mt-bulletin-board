@@ -2,11 +2,9 @@ import { Fragment, useEffect } from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
-import { ThemeProvider } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import { ChakraProvider } from '@chakra-ui/react'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import '@/styles/globals.css'
-import theme from '@/styles/theme'
 
 const cache = new InMemoryCache()
 const client = new ApolloClient({
@@ -28,12 +26,11 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <title>山の掲示板</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ApolloProvider client={client}>
+      <ApolloProvider client={client}>
+        <ChakraProvider>
           <Component {...pageProps} />
-        </ApolloProvider>
-      </ThemeProvider>
+        </ChakraProvider>
+      </ApolloProvider>
     </Fragment>
   )
 }

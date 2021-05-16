@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Button from '@/components/Button'
 import { Hello } from '@/components/Hello/Hello'
+import { Button as ChakraButton } from '@chakra-ui/react'
 
 export default function Home(): JSX.Element {
   return (
@@ -20,6 +21,7 @@ export default function Home(): JSX.Element {
           hoge
         </p>
         <Button />
+        <ChakraButton colorScheme="blue">Button</ChakraButton>
         <Hello name={'test'} />
 
         <p className={styles.description}>
