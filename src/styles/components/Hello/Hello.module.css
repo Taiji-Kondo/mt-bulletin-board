@@ -1,7 +1,0 @@
-.hello-container {
-  @apply w-1/2 mx-auto;
-}
-
-.hello-title {
-  @apply text-2xl font-bold text-blue-700;
-}

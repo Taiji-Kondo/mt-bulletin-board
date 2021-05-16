@@ -4,7 +4,7 @@ import CountryList from '@/components/country/countryList'
 const Countries: NextPage = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold">Countries</h1>
+      <h1 className="text-40 font-bold">Countries</h1>
       <CountryList />
     </div>
   )

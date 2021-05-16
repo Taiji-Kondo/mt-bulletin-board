@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import Button from '@/components/Button'
-import { Hello } from '@/components/Hello/Hello'
 import { Button as ChakraButton } from '@chakra-ui/react'
 
 export default function Home(): JSX.Element {
@@ -17,12 +15,10 @@ export default function Home(): JSX.Element {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <p className="text-red-900">test</p>
-        <p className="text-2xl" style={{ display: 'block' }}>
+        <p className="text-20" style={{ display: 'block' }}>
           hoge
         </p>
-        <Button />
         <ChakraButton colorScheme="blue">Button</ChakraButton>
-        <Hello name={'test'} />
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
