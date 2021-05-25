@@ -4,6 +4,7 @@ import Head from 'next/head'
 import PropTypes from 'prop-types'
 import { ChakraProvider } from '@chakra-ui/react'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import '@/styles/reset.css'
 import '@/styles/globals.css'
 
 const cache = new InMemoryCache()
