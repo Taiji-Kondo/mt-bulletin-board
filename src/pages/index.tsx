@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Button as ChakraButton } from '@chakra-ui/react'
+import { VFC } from 'react'
 
-export default function Home(): JSX.Element {
+const Home: VFC = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <Head>
@@ -62,3 +63,5 @@ export default function Home(): JSX.Element {
     </div>
   )
 }
+
+export default Home
