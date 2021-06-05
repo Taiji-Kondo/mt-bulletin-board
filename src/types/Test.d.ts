@@ -1,4 +1,4 @@
-export interface Test {
+interface Test {
   title: number
   name: string
 }
