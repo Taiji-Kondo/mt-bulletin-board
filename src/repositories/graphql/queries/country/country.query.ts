@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client'
-import { Country } from '@/models/typeCountry'
 
 export const COUNTRY_QUERY = gql`
   query($countryCode: ID!) {
@@ -11,5 +10,5 @@ export const COUNTRY_QUERY = gql`
 `
 
 export interface CountryData {
-  country: Country
+  country: CountryParams
 }
