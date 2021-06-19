@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Fragment>
       <Head>
-        <title>山の掲示板</title>
+        <title>テンプレート</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ApolloProvider client={client}>

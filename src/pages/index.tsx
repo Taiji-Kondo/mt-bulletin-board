@@ -8,7 +8,7 @@ const Home: VFC = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>山の掲示板</title>
+        <title>テンプレート</title>
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
 
