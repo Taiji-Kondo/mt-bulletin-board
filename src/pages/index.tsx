@@ -1,24 +1,8 @@
-import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 import { VFC } from 'react'
-import Header from '@/components/Header/Header'
-import Footer from '@/components/Footer/Footer'
+import { BaseLayout } from '@/layouts/BaseLayout'
 
 const Home: VFC = (): JSX.Element => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>テンプレート</title>
-        <link rel="icon" href="/public/favicon.ico" />
-      </Head>
-
-      <Header />
-
-      <main className={styles.main}>main</main>
-
-      <Footer />
-    </div>
-  )
+  return <BaseLayout>top</BaseLayout>
 }
 
 export default Home

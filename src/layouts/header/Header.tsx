@@ -1,4 +1,5 @@
 import { VFC } from 'react'
+import styles from '@/styles/Home.module.css'
 
 type HeaderPropsType = {
   header?: void
@@ -7,7 +8,7 @@ type HeaderPropsType = {
 export const Header: VFC<HeaderPropsType> = () => {
   return (
     <>
-      <header>header</header>
+      <header className={styles.header}>header</header>
     </>
   )
 }
