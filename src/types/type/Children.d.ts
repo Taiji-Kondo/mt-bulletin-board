@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
 
-type Children = {
+type ChildrenType = {
   children: ReactNode
 }
