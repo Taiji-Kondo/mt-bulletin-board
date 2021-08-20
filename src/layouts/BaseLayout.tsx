@@ -1,15 +1,18 @@
-import { ReactNode, VFC } from 'react'
+import { VFC } from 'react'
+import { ChildrenType } from '@/types/type/Children'
+import { Header } from '@/layouts/header/Header'
+import { Footer } from '@/layouts/footer/Footer'
 
-type HasChild = {
-  children: ReactNode
-}
+type BaseLayoutPropsType = {
+  header: void
+} & ChildrenType
 
-export const BaseLayout: VFC<HasChild> = ({ children }) => {
+export const BaseLayout: VFC<BaseLayoutPropsType> = ({ children }) => {
   return (
     <>
-      <header></header>
+      <Header />
       <main>{children}</main>
-      <footer></footer>
+      <Footer />
     </>
   )
 }
