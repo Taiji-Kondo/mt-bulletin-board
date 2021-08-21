@@ -2,7 +2,7 @@ import { NextPage, NextPageContext } from 'next'
 import Link from 'next/link'
 import CountryItem from '@/components/country/countryItem'
 
-interface PostPageProps {
+type PostPageProps = {
   code: string
 }
 

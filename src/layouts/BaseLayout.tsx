@@ -1,5 +1,5 @@
 import { VFC } from 'react'
-import { ChildrenType } from '@/types/type/Children'
+import { ChildrenType } from '@/types/Children'
 import { Header } from '@/layouts/header/Header'
 import { Footer } from '@/layouts/footer/Footer'
 import styles from '@/styles/Home.module.css'

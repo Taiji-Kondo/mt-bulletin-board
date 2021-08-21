@@ -2,11 +2,11 @@ import { useQuery } from '@apollo/client'
 import { NextPage } from 'next'
 import { COUNTRY_QUERY, CountryData } from '@/repositories/graphql/queries/country/country.query'
 
-interface PostItemProps {
+type PostItemPropsType = {
   codeName: string
 }
 
-const PostItem: NextPage<PostItemProps> = ({ codeName }) => {
+const PostItem: NextPage<PostItemPropsType> = ({ codeName }) => {
   const { loading, error, data } = useQuery<CountryData>(COUNTRY_QUERY, {
     variables: { code: codeName },
   })

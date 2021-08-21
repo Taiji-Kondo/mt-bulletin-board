@@ -9,6 +9,6 @@ export const COUNTRIES_QUERY = gql`
   }
 `
 
-export interface CountryData {
-  countries: CountryParams[]
+export type CountryData = {
+  countries: CountryParamsType[]
 }

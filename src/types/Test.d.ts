@@ -1,4 +1,4 @@
-interface Test {
+type Test = {
   title: number
   name: string
 }

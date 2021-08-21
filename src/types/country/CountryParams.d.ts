@@ -1,4 +1,4 @@
-interface CountryParams {
+type CountryParamsType = {
   code: string
   name: string
 }
