@@ -1,11 +1,9 @@
-import { Fragment, useEffect } from 'react'
-import { AppProps } from 'next/app'
-import Head from 'next/head'
-import PropTypes from 'prop-types'
-import { ChakraProvider } from '@chakra-ui/react'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import '@/styles/reset.css'
 import '@/styles/globals.css'
+import { VFC, Fragment } from 'react'
+import { AppProps } from 'next/app'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const cache = new InMemoryCache()
 const client = new ApolloClient({
@@ -13,20 +11,9 @@ const client = new ApolloClient({
   cache,
 })
 
-export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  useEffect(() => {
-    const jssStyles = document.querySelector<HTMLElement>('#jss-server-side')
-    if (jssStyles) {
-      jssStyles.parentElement?.removeChild(jssStyles)
-    }
-  }, [])
-
+const MyApp: VFC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Fragment>
-      <Head>
-        <title>テンプレート</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-      </Head>
       <ApolloProvider client={client}>
         <ChakraProvider>
           <Component {...pageProps} />
@@ -36,7 +23,4 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   )
 }
 
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-}
+export default MyApp
