@@ -4,6 +4,7 @@ import { VFC, Fragment } from 'react'
 import { AppProps } from 'next/app'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { ChakraProvider } from '@chakra-ui/react'
+import { BaseSEO } from '@/layouts/head/BaseSEO'
 
 const cache = new InMemoryCache()
 const client = new ApolloClient({
@@ -16,6 +17,7 @@ const MyApp: VFC<AppProps> = ({ Component, pageProps }) => {
     <Fragment>
       <ApolloProvider client={client}>
         <ChakraProvider>
+          <BaseSEO />
           <Component {...pageProps} />
         </ChakraProvider>
       </ApolloProvider>
