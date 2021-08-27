@@ -1,16 +1,16 @@
 import { VFC, Fragment } from 'react'
 import { BaseLayout } from '@/layouts/BaseLayout'
-import SEOHead from '@/layouts/head/SEOHead'
+import { PageSEO } from '@/layouts/head/PageSEO'
 
-const Home: VFC = () => {
+const Page: VFC = () => {
   return (
     <Fragment>
       <BaseLayout>
-        <SEOHead />
+        <PageSEO seo={{ title: 'top' }} />
         top
       </BaseLayout>
     </Fragment>
   )
 }
 
-export default Home
+export default Page
