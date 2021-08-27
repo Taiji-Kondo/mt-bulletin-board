@@ -7,7 +7,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 const cache = new InMemoryCache()
 const client = new ApolloClient({
-  uri: `https://countries.trevorblades.com`,
+  uri: process.env.API_URL,
   cache,
 })
 
