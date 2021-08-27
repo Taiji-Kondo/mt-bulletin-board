@@ -6,7 +6,7 @@ type PostItemPropsType = {
   codeName: string
 }
 
-const PostItem: NextPage<PostItemPropsType> = ({ codeName }) => {
+export const CountryItem: NextPage<PostItemPropsType> = ({ codeName }) => {
   const { loading, error, data } = useQuery<CountryData>(COUNTRY_QUERY, {
     variables: { code: codeName },
   })
@@ -27,5 +27,3 @@ const PostItem: NextPage<PostItemPropsType> = ({ codeName }) => {
     </div>
   )
 }
-
-export default PostItem

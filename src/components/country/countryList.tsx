@@ -6,7 +6,7 @@ import {
 } from '@/repositories/graphql/queries/country/countries.query'
 import { NextPage } from 'next'
 
-const CountryList: NextPage = () => {
+export const CountryList: NextPage = () => {
   const { loading, error, data } = useQuery<CountryData>(COUNTRIES_QUERY)
 
   if (loading) return <p>Loading...</p>
@@ -29,5 +29,3 @@ const CountryList: NextPage = () => {
     </ul>
   )
 }
-
-export default CountryList

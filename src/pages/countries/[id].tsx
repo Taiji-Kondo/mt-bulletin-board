@@ -1,6 +1,6 @@
 import { NextPage, NextPageContext } from 'next'
 import Link from 'next/link'
-import CountryItem from '@/components/country/countryItem'
+import { CountryItem } from '@/components/country/countryItem'
 
 type PostPageProps = {
   code: string
