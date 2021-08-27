@@ -1,10 +1,10 @@
 import { VFC } from 'react'
 import { NextSeo, NextSeoProps } from 'next-seo'
 
-type PageSEOProps = {
+type PageSEOPropsType = {
   seo?: NextSeoProps
 }
 
-export const PageSEO: VFC<PageSEOProps> = ({ seo }) => {
+export const PageSEO: VFC<PageSEOPropsType> = ({ seo }) => {
   return <NextSeo {...seo} />
 }
