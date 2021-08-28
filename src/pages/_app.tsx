@@ -8,7 +8,7 @@ import { BaseSEO } from '@/layouts/head/BaseSEO'
 
 const cache = new InMemoryCache()
 const client = new ApolloClient({
-  uri: process.env.API_URL,
+  uri: process.env.NEXT_PUBLIC_API_URL,
   cache,
 })
 
