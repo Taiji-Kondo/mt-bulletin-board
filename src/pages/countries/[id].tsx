@@ -6,16 +6,18 @@ type PostPageProps = {
   code: string
 }
 
-const PostPage: NextPage<PostPageProps> = ({ code }) => (
-  <div>
-    <h1>POST</h1>
-    <CountryItem codeName={code} />
-    <hr />
-    <Link href="/">
-      <a>Go back</a>
-    </Link>
-  </div>
-)
+const PostPage: NextPage<PostPageProps> = ({ code }) => {
+  return (
+    <div>
+      <h1>POST</h1>
+      <CountryItem codeName={code} />
+      <hr />
+      <Link href="/">
+        <a>Go back</a>
+      </Link>
+    </div>
+  )
+}
 
 PostPage.getInitialProps = ({ query }: NextPageContext) => {
   return { code: String(query) }
