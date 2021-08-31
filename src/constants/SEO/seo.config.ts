@@ -1,6 +1,8 @@
 // Document: https://github.com/garmeeh/next-seo
 
-export const SEO = {
+import { NextSeoProps } from 'next-seo'
+
+export const SEO: NextSeoProps = {
   title: 'template',
   description: 'This example uses more of the available config options.',
   canonical: 'https://template.com',
