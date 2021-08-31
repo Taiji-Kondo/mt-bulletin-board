@@ -2,7 +2,7 @@
 
 import { NextSeoProps } from 'next-seo'
 
-export const SEO: NextSeoProps = {
+export const SEO_CONFIG: NextSeoProps = {
   title: 'template',
   description: 'This example uses more of the available config options.',
   canonical: 'https://template.com',

@@ -1,1 +1,1 @@
-export { SEO } from '@/constants/SEO/seo.config'
+export { SEO_CONFIG } from '@/constants/SEO/seo.config'
