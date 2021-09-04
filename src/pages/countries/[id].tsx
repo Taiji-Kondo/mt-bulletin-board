@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
-import { CountryItem } from '@/components/country/countryItem'
+import { CountryItem } from '@/components/country/CountryItem'
 import { useRouter } from 'next/router'
 
 type PostPageProps = {

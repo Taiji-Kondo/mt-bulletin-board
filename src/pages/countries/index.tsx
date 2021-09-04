@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { CountryList } from '@/components/country/countryList'
+import { CountryList } from '@/components/country/CountryList'
 
 const Countries: NextPage = () => {
   return (
