@@ -5,6 +5,7 @@ import {
   CountryData,
 } from '@/repositories/graphql/queries/country/countries.query'
 import { NextPage } from 'next'
+import { Table, Thead, Tbody, Tr, Th, Td, Link as ChakraLink } from '@chakra-ui/react'
 
 export const CountryList: NextPage = () => {
   const { loading, error, data } = useQuery<CountryData>(COUNTRIES_QUERY)
@@ -17,15 +18,29 @@ export const CountryList: NextPage = () => {
   if (!countries) return null
 
   return (
-    <ul>
-      {countries.map(({ code, name }, index: number) => {
-        return (
-          <li key={index}>
-            <h3>{name}</h3>
-            <Link href={`/countries/${code}`}>{code}</Link>
-          </li>
-        )
-      })}
-    </ul>
+    <Table variant="simple">
+      <Thead>
+        <Tr>
+          <Th>Country Name</Th>
+          <Th>Country Code</Th>
+          <Th>Action</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {countries.map(({ code, name }) => {
+          return (
+            <Tr key={code}>
+              <Td>{name}</Td>
+              <Td>{code}</Td>
+              <Td>
+                <Link href={`/countries/${code}`}>
+                  <ChakraLink color="blue">Show Detail</ChakraLink>
+                </Link>
+              </Td>
+            </Tr>
+          )
+        })}
+      </Tbody>
+    </Table>
   )
 }
