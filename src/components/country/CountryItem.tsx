@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client'
 import { NextPage } from 'next'
 import { COUNTRY_QUERY, CountryData } from '@/repositories/graphql/queries/country/country.query'
+import { Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 
 type PostItemPropsType = {
   codeName: string
@@ -21,9 +22,19 @@ export const CountryItem: NextPage<PostItemPropsType> = ({ codeName }) => {
   const { name, code } = country
 
   return (
-    <div>
-      <h2>{name}</h2>
-      <p>{code}</p>
-    </div>
+    <Table variant="simple">
+      <Thead>
+        <Tr>
+          <Th>Country Name</Th>
+          <Th>Country Code</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>{name}</Td>
+          <Td>{code}</Td>
+        </Tr>
+      </Tbody>
+    </Table>
   )
 }
