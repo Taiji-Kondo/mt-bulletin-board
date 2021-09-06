@@ -10,6 +10,8 @@ const cache = new InMemoryCache()
 const client = new ApolloClient({
   uri: process.env.NEXT_PUBLIC_API_URL,
   cache,
+  name: process.env.NEXT_PUBLIC_SITE_NAME,
+  version: process.env.NEXT_PUBLIC_CLIENT_VERSION,
 })
 
 const MyApp: VFC<AppProps> = ({ Component, pageProps }) => {
