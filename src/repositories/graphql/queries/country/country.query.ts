@@ -5,10 +5,12 @@ export const COUNTRY_QUERY = gql`
     country(code: $code) {
       code
       name
+      phone
+      emoji
     }
   }
 `
 
 export type CountryData = {
-  country: CountryParamsType
+  country: Required<CountryParamsType>
 }
