@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const COUNTRY_QUERY = gql`
-  query($code: ID!) {
+  query GetCountry($code: ID!) {
     country(code: $code) {
       code
       name
