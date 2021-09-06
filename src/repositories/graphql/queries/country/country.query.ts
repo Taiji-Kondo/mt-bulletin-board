@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client'
+import { BASE_COUNTRY_FIELD } from '@/repositories/graphql/queries/country/baseCountryField.query'
 
 export const COUNTRY_QUERY = gql`
+  ${BASE_COUNTRY_FIELD}
   query GetCountry($code: ID!) {
     country(code: $code) {
-      code
-      name
+      ...BaseCountryField
       phone
       emoji
     }
