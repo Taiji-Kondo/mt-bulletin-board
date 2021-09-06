@@ -19,7 +19,7 @@ export const CountryItem: NextPage<PostItemPropsType> = ({ codeName }) => {
   const { country } = data
   if (!country) return null
 
-  const { name, code } = country
+  const { name, code, phone, emoji } = country
 
   return (
     <Table variant="simple">
@@ -27,12 +27,16 @@ export const CountryItem: NextPage<PostItemPropsType> = ({ codeName }) => {
         <Tr>
           <Th>Country Name</Th>
           <Th>Country Code</Th>
+          <Th>Phone</Th>
+          <Th>Emoji</Th>
         </Tr>
       </Thead>
       <Tbody>
         <Tr>
           <Td>{name}</Td>
           <Td>{code}</Td>
+          <Td>{phone}</Td>
+          <Td>{emoji}</Td>
         </Tr>
       </Tbody>
     </Table>
