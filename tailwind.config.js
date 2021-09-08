@@ -1,7 +1,7 @@
 const path = require('path')
 const variables = require('./.config/variables.json')
 const plugin = require('tailwindcss/plugin')
-const Settings = require(path.resolve(__dirname, '.config/settings'))
+const TailwindSettings = require(path.resolve(__dirname, '.config/tailwind'))
 
 // Rem function
 function rem(target) {
@@ -132,9 +132,9 @@ module.exports = {
     }),
   ],
   purge: {
-    content: Settings.tailwind.purge,
+    content: TailwindSettings.tailwind.purge,
     options: {
-      whitelist: Settings.tailwind.whitelist,
+      whitelist: TailwindSettings.tailwind.whitelist,
     },
   },
   // remove default utilities

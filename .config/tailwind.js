@@ -3,6 +3,6 @@ const TailwindSettings = {
   whitelist: [],
 }
 
-const settings = { tailwind: TailwindSettings }
+const tailwind = { tailwind: TailwindSettings }
 
-module.exports = settings
+module.exports = tailwind
