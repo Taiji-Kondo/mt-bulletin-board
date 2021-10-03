@@ -1,7 +1,8 @@
 import { useQuery } from '@apollo/client'
-import { NextPage } from 'next'
-import { COUNTRY_QUERY, CountryData } from '@/repositories/graphql/queries/country/country.query'
 import { Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
+import { NextPage } from 'next'
+
+import { COUNTRY_QUERY, CountryData } from '@/repositories/graphql/queries/country/country.query'
 
 type PostItemPropsType = {
   codeName: string

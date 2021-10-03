@@ -1,6 +1,8 @@
 const path = require('path')
-const variables = require('./.config/variables.json')
+
 const plugin = require('tailwindcss/plugin')
+
+const variables = require('./.config/variables.json')
 const TailwindSettings = require(path.resolve(__dirname, '.config/tailwind'))
 
 // Rem function

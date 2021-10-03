@@ -1,7 +1,10 @@
 import { VFC } from 'react'
-import { ChildrenType } from '@/types/Children'
-import { Header } from '@/layouts/header/Header'
+
 import { Footer } from '@/layouts/footer/Footer'
+import { Header } from '@/layouts/header/Header'
+
+import { ChildrenType } from '@/types/Children'
+
 import styles from '@/styles/Home.module.css'
 
 type BaseLayoutPropsType = {

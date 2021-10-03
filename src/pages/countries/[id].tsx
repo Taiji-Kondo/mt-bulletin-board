@@ -1,8 +1,9 @@
+import { Box, Container, Link as ChakraLink } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import Link from 'next/link'
-import { CountryItem } from '@/components/country/CountryItem'
 import { useRouter } from 'next/router'
-import { Box, Container, Link as ChakraLink } from '@chakra-ui/react'
+
+import { CountryItem } from '@/components/country/CountryItem'
 
 type PostPageProps = {
   code: string

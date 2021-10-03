@@ -1,5 +1,5 @@
-import { VFC } from 'react'
 import { NextSeo, NextSeoProps } from 'next-seo'
+import { VFC } from 'react'
 
 type PageSEOPropsType = {
   seo?: NextSeoProps

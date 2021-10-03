@@ -1,11 +1,12 @@
-import Link from 'next/link'
 import { useQuery } from '@apollo/client'
+import { Table, Thead, Tbody, Tr, Th, Td, Link as ChakraLink } from '@chakra-ui/react'
+import { NextPage } from 'next'
+import Link from 'next/link'
+
 import {
   COUNTRIES_QUERY,
   CountryData,
 } from '@/repositories/graphql/queries/country/countries.query'
-import { NextPage } from 'next'
-import { Table, Thead, Tbody, Tr, Th, Td, Link as ChakraLink } from '@chakra-ui/react'
 
 export const CountryList: NextPage = () => {
   const { loading, error, data } = useQuery<CountryData>(COUNTRIES_QUERY)

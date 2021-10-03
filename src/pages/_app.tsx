@@ -1,9 +1,10 @@
 import '@/styles/reset.css'
 import '@/styles/globals.css'
-import { VFC, Fragment } from 'react'
-import { AppProps } from 'next/app'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { ChakraProvider } from '@chakra-ui/react'
+import { AppProps } from 'next/app'
+import { VFC, Fragment } from 'react'
+
 import { BaseSEO } from '@/layouts/head/BaseSEO'
 
 const cache = new InMemoryCache()

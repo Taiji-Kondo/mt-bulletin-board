@@ -1,4 +1,5 @@
 import { VFC } from 'react'
+
 import styles from '@/styles/Home.module.css'
 
 type FooterPropsType = {

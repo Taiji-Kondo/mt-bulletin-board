@@ -1,6 +1,7 @@
-import { NextPage } from 'next'
-import { CountryList } from '@/components/country/CountryList'
 import { Box, Container } from '@chakra-ui/react'
+import { NextPage } from 'next'
+
+import { CountryList } from '@/components/country/CountryList'
 
 const Countries: NextPage = () => {
   return (
