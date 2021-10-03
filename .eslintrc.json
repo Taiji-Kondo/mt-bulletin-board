@@ -15,7 +15,7 @@
       "version": "latest"
     }
   },
-  "plugins": ["react-hooks", "react", "@typescript-eslint", "import", "prettier"],
+  "plugins": ["react-hooks", "react", "@typescript-eslint", "import", "unused-imports", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module",
@@ -72,6 +72,7 @@
           { "pattern": "./**.module.css", "group": "index", "position": "before" }
         ]
       }
-    ]
+    ],
+    "unused-imports/no-unused-imports": 1
   }
 }
