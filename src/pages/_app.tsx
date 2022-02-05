@@ -1,5 +1,3 @@
-import '@/styles/reset.css'
-import '@/styles/globals.css'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
@@ -19,7 +17,7 @@ const MyApp: VFC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Fragment>
       <ApolloProvider client={client}>
-        <ChakraProvider>
+        <ChakraProvider resetCSS={true}>
           <BaseSEO />
           <Component {...pageProps} />
         </ChakraProvider>
