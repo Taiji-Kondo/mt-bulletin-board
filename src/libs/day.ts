@@ -1,6 +1,6 @@
 import 'dayjs/locale/ja';
 
-import type { ConfigType, Dayjs } from 'dayjs';
+import type { ConfigType, Dayjs, ManipulateType, OpUnitType } from 'dayjs';
 import dayjs from 'dayjs';
 import ja from 'dayjs/locale/ja';
 import isBetween from 'dayjs/plugin/isBetween';
@@ -28,5 +28,17 @@ export class Day {
 
   public format(template?: TemplateType) {
     return this._day.format(template);
+  }
+
+  public add(value: number, unit?: ManipulateType | undefined) {
+    return this._day.add(value, unit);
+  }
+
+  public isAfter(date: ConfigType, unit?: OpUnitType | undefined) {
+    return this._day.isAfter(date, unit);
+  }
+
+  public isBefore(date: ConfigType, unit?: OpUnitType | undefined) {
+    return this._day.isBefore(date, unit);
   }
 }
