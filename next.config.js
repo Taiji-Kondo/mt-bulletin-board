@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   optimizeFonts: true,
   pageExtensions: ['page.tsx', 'page.ts'],
   reactStrictMode: true,
@@ -12,6 +15,6 @@ const nextConfig = {
     ];
   },
   swcMinify: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
