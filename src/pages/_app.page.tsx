@@ -1,19 +1,23 @@
 import 'src/styles/globals.css';
 
+import { MantineProvider } from '@mantine/core';
 import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
 
-import { ErrorBoundary } from '@/components/layouts/ErrorBoundary/ErrorBoundary';
-import { ErrorBoundaryFallback } from '@/components/layouts/ErrorBoundary/ErrorBoundaryFallback';
-import { BaseSEO } from '@/components/layouts/head/BaseSEO';
+import { MANTINE_THEME } from '@/constants/theme/mantineTheme';
+import { ErrorBoundary } from '@/layouts/ErrorBoundary/ErrorBoundary';
+import { ErrorBoundaryFallback } from '@/layouts/ErrorBoundary/ErrorBoundaryFallback';
+import { BaseSEO } from '@/layouts/head/BaseSEO';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
-        <BaseSEO />
-        <Component {...pageProps} />
-      </ErrorBoundary>
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={MANTINE_THEME}>
+        <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
+          <BaseSEO />
+          <Component {...pageProps} />
+        </ErrorBoundary>
+      </MantineProvider>
     </RecoilRoot>
   );
 }
