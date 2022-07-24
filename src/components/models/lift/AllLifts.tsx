@@ -1,11 +1,9 @@
 import { Box, Loader, Stack, Text } from '@mantine/core';
-import { useQuery } from 'urql';
 
-import type { AllLiftsQuery } from '@/generated/graphql';
-import { AllLiftsDocument } from '@/generated/graphql';
+import { useAllLiftsQuery } from '@/generated/graphql';
 
 export const AllLifts = () => {
-  const [result] = useQuery<AllLiftsQuery>({ query: AllLiftsDocument });
+  const [result] = useAllLiftsQuery();
 
   if (result.fetching) return <Loader />;
 
