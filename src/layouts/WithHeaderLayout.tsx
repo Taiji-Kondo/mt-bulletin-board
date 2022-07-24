@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import { BaseHeader } from '@/components/ui/BaseHeader';
+import { BaseHeader } from '@/components/elements/BaseHeader';
 import { BaseLayout } from '@/layouts/BaseLayout';
 
 type WithHeaderLayoutPropsType = {
