@@ -13,6 +13,7 @@
     "format": "run-s format:*",
     "format:eslint": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
     "format:prettier": "prettier --write ./src",
+    "typecheck": "tsc --noEmit",
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
