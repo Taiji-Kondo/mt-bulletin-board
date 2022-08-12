@@ -7,7 +7,7 @@ export const AllLifts = () => {
 
   if (result.fetching) return <Loader />;
 
-  if (!result.data || result.data.allLifts.length < 0) return <Text>No lifts found</Text>;
+  if (!result.data || result.data.allLifts.length < 0) return <Text>Not found lifts</Text>;
 
   return (
     <Stack spacing={12}>
