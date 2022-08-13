@@ -1,14 +1,12 @@
 import { Title } from '@mantine/core';
-import type { NextPage } from 'next';
+import type { NextPageWithLayoutType } from 'next';
 
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 
-const UserPage: NextPage = () => {
-  return (
-    <WithHeaderLayout>
-      <Title order={1}>User</Title>
-    </WithHeaderLayout>
-  );
+const UserPage: NextPageWithLayoutType = () => {
+  return <Title order={1}>User</Title>;
 };
+
+UserPage.getLayout = (page) => <WithHeaderLayout>{page}</WithHeaderLayout>;
 
 export default UserPage;
