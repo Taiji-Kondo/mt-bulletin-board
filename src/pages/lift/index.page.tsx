@@ -1,16 +1,18 @@
 import { Title } from '@mantine/core';
-import type { NextPage } from 'next';
+import type { NextPageWithLayoutType } from 'next';
 
 import { AllLifts } from '@/components/models/lift/AllLifts';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 
-const UserPage: NextPage = () => {
+const LiftPage: NextPageWithLayoutType = () => {
   return (
-    <WithHeaderLayout>
+    <>
       <Title order={1}>All Lifts</Title>
       <AllLifts />
-    </WithHeaderLayout>
+    </>
   );
 };
 
-export default UserPage;
+LiftPage.getLayout = (page) => <WithHeaderLayout>{page}</WithHeaderLayout>;
+
+export default LiftPage;
