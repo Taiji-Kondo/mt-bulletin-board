@@ -1,5 +1,6 @@
 import { MantineProvider } from '@mantine/core';
-import type { AppProps } from 'next/app';
+import type { NextPage } from 'next';
+import type { AppPropsWithLayoutType } from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { Provider } from 'urql';
 
@@ -9,8 +10,10 @@ import { ErrorBoundaryFallback } from '@/layouts/ErrorBoundary/ErrorBoundaryFall
 import { BaseSEO } from '@/layouts/head/BaseSEO';
 import { urqlClient } from '@/libs/urqlClient';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
+function MyApp({ Component, pageProps }: AppPropsWithLayoutType) {
+  const getLayout = Component.getLayout ?? ((page: NextPage) => page);
+
+  return getLayout(
     <RecoilRoot>
       <MantineProvider withGlobalStyles withNormalizeCSS theme={MANTINE_THEME}>
         <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
