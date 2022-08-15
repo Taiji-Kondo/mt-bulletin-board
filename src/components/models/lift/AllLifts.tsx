@@ -1,4 +1,5 @@
-import { Box, Loader, Stack, Text } from '@mantine/core';
+import { Button, Loader, Stack, Text } from '@mantine/core';
+import Link from 'next/link';
 
 import { useAllLiftsQuery } from '@/generated/graphql';
 
@@ -12,7 +13,15 @@ export const AllLifts = () => {
   return (
     <Stack spacing={12}>
       {result.data.allLifts.map((lift) => (
-        <Box key={lift.id}>{lift.name}</Box>
+        <Link
+          href={{
+            pathname: '/lift/[id]',
+            query: { id: lift.id },
+          }}
+          key={lift.id}
+        >
+          <Button variant={'subtle'}>{lift.name}</Button>
+        </Link>
       ))}
     </Stack>
   );
