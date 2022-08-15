@@ -1,0 +1,14 @@
+query lift($id: ID!) {
+    Lift(id: $id) {
+        id
+        name
+        status
+        capacity
+        night
+        elevationGain
+        trailAccess {
+            id
+            name
+        }
+    }
+}
