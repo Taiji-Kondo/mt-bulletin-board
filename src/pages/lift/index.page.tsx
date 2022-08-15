@@ -4,7 +4,7 @@ import type { NextPageWithLayoutType } from 'next';
 import { AllLifts } from '@/components/models/lift/AllLifts';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 
-const LiftPage: NextPageWithLayoutType = () => {
+const AllLiftPage: NextPageWithLayoutType = () => {
   return (
     <>
       <Title order={1}>All Lifts</Title>
@@ -13,6 +13,6 @@ const LiftPage: NextPageWithLayoutType = () => {
   );
 };
 
-LiftPage.getLayout = (page) => <WithHeaderLayout>{page}</WithHeaderLayout>;
+AllLiftPage.getLayout = (page) => <WithHeaderLayout>{page}</WithHeaderLayout>;
 
-export default LiftPage;
+export default AllLiftPage;
