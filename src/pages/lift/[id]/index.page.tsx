@@ -13,11 +13,7 @@ const LiftPage: NextPageWithLayoutType = () => {
     return query.id[0];
   }, [query]);
 
-  return (
-    <>
-      <Lift id={id} />
-    </>
-  );
+  return <Lift id={id} />;
 };
 
 LiftPage.getLayout = (page) => <WithHeaderLayout>{page}</WithHeaderLayout>;
