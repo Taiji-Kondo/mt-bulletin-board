@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { useAllLiftsQuery } from '@/generated/graphql';
 
 export const AllLifts = () => {
-  const [result] = useAllLiftsQuery();
+  const [{ data }] = useAllLiftsQuery();
 
-  if (!result.data || result.data.allLifts.length < 0) return <Text>Not found lifts</Text>;
+  if (!data || data.allLifts.length < 0) return <Text>Not found lifts</Text>;
 
   return (
     <Stack spacing={12}>
-      {result.data.allLifts.map((lift) => (
+      {data.allLifts.map((lift) => (
         <Link
           href={{
             pathname: '/lift/[id]',
