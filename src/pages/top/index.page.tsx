@@ -15,6 +15,9 @@ const TopPage: NextPageWithLayoutType = () => {
         <Link href={'/user'}>
           <Button>User</Button>
         </Link>
+        <Link href={'/dashboard'}>
+          <Button>Dashboard</Button>
+        </Link>
       </Stack>
     </>
   );
