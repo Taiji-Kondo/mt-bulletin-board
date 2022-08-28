@@ -2,6 +2,7 @@ import { Button, Stack, Title } from '@mantine/core';
 import type { NextPageWithLayoutType } from 'next';
 import Link from 'next/link';
 
+import { pagesPath } from '@/generated/path/$path';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 
 const TopPage: NextPageWithLayoutType = () => {
@@ -9,13 +10,13 @@ const TopPage: NextPageWithLayoutType = () => {
     <>
       <Title order={1}>Top</Title>
       <Stack>
-        <Link href={'/lift'}>
+        <Link href={pagesPath.lift.$url()}>
           <Button>All Lists</Button>
         </Link>
-        <Link href={'/user'}>
+        <Link href={pagesPath.user.$url()}>
           <Button>User</Button>
         </Link>
-        <Link href={'/dashboard'}>
+        <Link href={pagesPath.dashboard.$url()}>
           <Button>Dashboard</Button>
         </Link>
       </Stack>
