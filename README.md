@@ -23,3 +23,9 @@ yarn ncu
 # Update all dependencies
 yarn ncu -u
 ```
+
+### Generate Pages Path
+
+[pathpida](https://github.com/aspida/pathpida)
+
+Paths are automatically generated when you `yarn dev` or `yarn build`.
