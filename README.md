@@ -12,5 +12,14 @@
 - Github: https://github.com/MoonHighway/snowtooth  
 - Playground: https://snowtooth.moonhighway.com/
 
+### Update Packages
 
+[npm-check-updates](https://www.npmjs.com/package/npm-check-updates)
 
+```shell
+# Show all new dependencies 
+yarn ncu
+
+# Update all dependencies
+yarn ncu -u
+```
