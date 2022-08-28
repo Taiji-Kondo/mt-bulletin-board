@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { ErrorBoundaryFallback } from '@/layouts/ErrorBoundary/ErrorBoundaryFallback';
 
 const ServerErrorPage: NextPage = memo(() => {
-  return ErrorBoundaryFallback();
+  return ErrorBoundaryFallback({ error: new Error('500'), resetErrorBoundary: () => location.reload() });
 });
 
 ServerErrorPage.displayName = 'ServerErrorPage';
