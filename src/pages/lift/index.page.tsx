@@ -7,6 +7,7 @@ import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 import { CLIENT_OPTIONS } from '@/libs/urqlClient';
 
 const AllLiftPage: NextPageWithLayoutType = () => {
+  // React.lazy example
   const AllLiftsComponent = lazy(() => import('@/components/models/lift/LazyAllLifts'));
 
   return (
