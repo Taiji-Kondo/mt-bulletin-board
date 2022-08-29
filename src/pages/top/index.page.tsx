@@ -1,8 +1,7 @@
 import { Button, Stack, Title } from '@mantine/core';
 import type { NextPageWithLayoutType } from 'next';
-import Link from 'next/link';
 
-import { pagesPath } from '@/generated/path/$path';
+import { BaseLink } from '@/components/functional/BaseLink';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 
 const TopPage: NextPageWithLayoutType = () => {
@@ -10,15 +9,15 @@ const TopPage: NextPageWithLayoutType = () => {
     <>
       <Title order={1}>Top</Title>
       <Stack>
-        <Link href={pagesPath.lift.$url()}>
+        <BaseLink href={(path) => path.lift.$url()}>
           <Button>All Lists</Button>
-        </Link>
-        <Link href={pagesPath.user.$url()}>
+        </BaseLink>
+        <BaseLink href={(path) => path.user.$url()}>
           <Button>User</Button>
-        </Link>
-        <Link href={pagesPath.dashboard.$url()}>
+        </BaseLink>
+        <BaseLink href={(path) => path.dashboard.$url()}>
           <Button>Dashboard</Button>
-        </Link>
+        </BaseLink>
       </Stack>
     </>
   );

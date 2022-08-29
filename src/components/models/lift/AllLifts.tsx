@@ -1,8 +1,7 @@
 import { Button, Stack, Text } from '@mantine/core';
-import Link from 'next/link';
 
+import { BaseLink } from '@/components/functional/BaseLink';
 import { useAllLiftsQuery } from '@/generated/graphql';
-import { pagesPath } from '@/generated/path/$path';
 
 export const AllLifts = () => {
   const [{ data }] = useAllLiftsQuery();
@@ -12,9 +11,9 @@ export const AllLifts = () => {
   return (
     <Stack spacing={12}>
       {data.allLifts.map((lift) => (
-        <Link href={pagesPath.lift._id(lift.id).$url()} key={lift.id}>
+        <BaseLink href={(path) => path.lift._id(lift.id).$url()} key={lift.id}>
           <Button variant={'subtle'}>{lift.name}</Button>
-        </Link>
+        </BaseLink>
       ))}
     </Stack>
   );
