@@ -18,10 +18,6 @@ const TopPage: NextPageWithLayoutType = () => {
         <BaseLink href={(path) => path.dashboard.$url()}>
           <Button>Dashboard</Button>
         </BaseLink>
-
-        <BaseLink href={{ hash: 'example', pathname: '/lift' }}>
-          <Button>All Lists</Button>
-        </BaseLink>
       </Stack>
     </>
   );
