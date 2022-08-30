@@ -10,11 +10,10 @@ type PagesPathKeysType = keyof PagesPath;
 type PagesPathUrlType = ReturnType<PagesPath[PagesPathKeysType]['$url']>;
 
 // UrlObjectの型をpagesPathをもとにカスタム（href, pathnameで補完がでるように）
-// TODO hrefとpathnameの違いは？
 type UrlObjectType = {
   hash?: PagesPathUrlType['hash'];
   pathname?: PagesPathUrlType['pathname'];
-} & Omit<UrlObject, 'pathname' | 'hash' | 'href'>;
+} & Omit<UrlObject, 'pathname' | 'hash'>;
 
 // 動的ページに対応するためpathsPath自体を渡して使用側で自由に指定できるようにする
 type BaseLinkHrefType = (path: PagesPath) => UrlObject | string;
@@ -25,7 +24,7 @@ type BaseLinkPropsType = {
 
 export const BaseLink = ({ children, href, ...props }: BaseLinkPropsType) => {
   return (
-    <Link {...props} href={typeof href === 'function' ? href(pagesPath) : href}>
+    <Link passHref {...props} href={typeof href === 'function' ? href(pagesPath) : href}>
       {children}
     </Link>
   );
