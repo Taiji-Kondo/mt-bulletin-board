@@ -1,6 +1,6 @@
 import { Button, Stack, Text } from '@mantine/core';
 
-import { BaseLink } from '@/components/functional/BaseLink';
+import { BaseLink } from '@/components/functional/link/BaseLink';
 import { useAllLiftsQuery } from '@/generated/graphql';
 
 export const AllLifts = () => {

@@ -1,7 +1,7 @@
 import { Button, Stack, Title } from '@mantine/core';
 import type { NextPageWithLayoutType } from 'next';
 
-import { BaseLink } from '@/components/functional/BaseLink';
+import { BaseLink } from '@/components/functional/link/BaseLink';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 
 const TopPage: NextPageWithLayoutType = () => {
@@ -17,6 +17,10 @@ const TopPage: NextPageWithLayoutType = () => {
         </BaseLink>
         <BaseLink href={(path) => path.dashboard.$url()}>
           <Button>Dashboard</Button>
+        </BaseLink>
+
+        <BaseLink href={{ hash: 'example', pathname: '/lift' }}>
+          <Button>All Lists</Button>
         </BaseLink>
       </Stack>
     </>
