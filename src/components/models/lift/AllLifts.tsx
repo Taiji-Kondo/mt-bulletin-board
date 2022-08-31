@@ -10,7 +10,7 @@ export const AllLifts = () => {
 
   return (
     <Stack spacing={12}>
-      {data.allLifts.map((lift) => (
+      {data?.allLifts.map((lift) => (
         <BaseLink href={(path) => path.lift._id(lift.id).$url()} key={lift.id}>
           <Button variant={'subtle'}>{lift.name}</Button>
         </BaseLink>
