@@ -1,2 +1,4 @@
 **/node_modules/*
 src/generated/
+src/**/*.generated.ts
+src/**/*.generated.tsx

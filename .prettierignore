@@ -3,7 +3,5 @@ node_modules
 **/_next/**
 **/dist/**
 src/graphql/
-amplify/**/*.yml
-amplify/**/*.json
-amplify/backend/types/*.ts
-aws-exports.js
+src/**/*.generated.ts
+src/**/*.generated.tsx
