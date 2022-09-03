@@ -1,29 +1,41 @@
 import { Box, Button, Center, Stack, Text } from '@mantine/core';
+import type { OperationContext } from 'urql';
+import { gql } from 'urql';
 
 import { BaseLink } from '@/components/functional/link/BaseLink';
-import { useAllLiftsQuery } from '@/generated/graphql';
+import type { AllLiftsNameFieldsFragment } from '@/components/models/lift/AllLifts.generated';
 
-export const AllLifts = () => {
-  const [{ data }, executeQuery] = useAllLiftsQuery();
+export const AllLiftsNameFields = gql`
+  fragment AllLiftsNameFields on Lift {
+    id
+    name
+  }
+`;
 
-  const refresh = () => {
+type AllLiftsPropsType = {
+  data: AllLiftsNameFieldsFragment[];
+  refresh: (opt?: Partial<OperationContext> | undefined) => void;
+};
+
+export const AllLifts = ({ data, refresh }: AllLiftsPropsType) => {
+  const onRefresh = () => {
     console.log('refresh');
-    executeQuery({ requestPolicy: 'network-only', suspense: true });
+    refresh({ requestPolicy: 'network-only', suspense: true });
   };
 
-  if (!data || data.allLifts.length < 0) return <Text>Not found lifts</Text>;
+  if (!data.length) return <Text>Not found lifts</Text>;
 
   return (
     <Box>
       <Stack spacing={12}>
-        {data?.allLifts.map((lift) => (
+        {data.map((lift) => (
           <BaseLink href={(path) => path.lift._id(lift.id).$url()} key={lift.id}>
             <Button variant={'subtle'}>{lift.name}</Button>
           </BaseLink>
         ))}
       </Stack>
       <Center mt={50}>
-        <Button onClick={refresh}>Refresh</Button>
+        <Button onClick={onRefresh}>Refresh</Button>
       </Center>
     </Box>
   );

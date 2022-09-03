@@ -1,11 +1,23 @@
 import { Loader, Title } from '@mantine/core';
 import type { NextPageWithLayoutType } from 'next';
 import { lazy, Suspense } from 'react';
+import { gql } from 'urql';
 
-import { AllLifts } from '@/components/models/lift/AllLifts';
+import { AllLifts, AllLiftsNameFields } from '@/components/models/lift/AllLifts';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
+import { useAllLiftsPageQuery } from '@/pages/lift/index.page.generated';
+
+gql`
+  ${AllLiftsNameFields}
+  query AllLiftsPage {
+    allLifts {
+      ...AllLiftsNameFields
+    }
+  }
+`;
 
 const AllLiftPage: NextPageWithLayoutType = () => {
+  const [{ data }, executeQuery] = useAllLiftsPageQuery();
   // React.lazy example
   const AllLiftsComponent = lazy(() => import('@/components/models/lift/LazyAllLifts'));
 
@@ -13,8 +25,8 @@ const AllLiftPage: NextPageWithLayoutType = () => {
     <>
       <Title order={1}>All Lifts</Title>
       <Suspense fallback={<Loader />}>
-        <AllLifts />
-        <AllLiftsComponent />
+        <AllLifts data={data?.allLifts ?? []} refresh={executeQuery} />
+        <AllLiftsComponent data={data?.allLifts ?? []} refresh={executeQuery} />
       </Suspense>
     </>
   );
