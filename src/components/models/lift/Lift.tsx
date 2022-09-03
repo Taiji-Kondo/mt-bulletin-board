@@ -1,17 +1,28 @@
-import { Loader, Stack, Text, Title } from '@mantine/core';
+import { Stack, Text, Title } from '@mantine/core';
+import { gql } from 'urql';
 
-import { useLiftQuery } from '@/generated/graphql';
+import type { LiftsDetailFieldsFragment } from '@/components/models/lift/Lift.generated';
+
+export const LiftsDetailFields = gql`
+  fragment LiftsDetailFields on Lift {
+    id
+    name
+    status
+    capacity
+    night
+    elevationGain
+    trailAccess {
+      id
+      name
+    }
+  }
+`;
 
 type LiftPropsType = {
-  id: string;
+  lift: LiftsDetailFieldsFragment | undefined;
 };
 
-export const Lift = ({ id }: LiftPropsType) => {
-  const [result] = useLiftQuery({ variables: { id } });
-
-  if (result.fetching) return <Loader />;
-
-  const lift = result.data?.Lift;
+export const Lift = ({ lift }: LiftPropsType) => {
   if (!lift) return <Text>Not found lift</Text>;
 
   return (
