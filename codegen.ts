@@ -11,11 +11,11 @@ const config: CodegenConfig = {
       plugins: ['typescript-operations', 'typescript-urql'],
       preset: 'near-operation-file',
       presetConfig: {
-        baseTypesPath: 'types/graphql/graphqlTypes.generated.ts',
+        baseTypesPath: 'types/graphqlTypes.generated.ts',
         extension: '.generated.tsx',
       },
     },
-    'src/types/graphql/graphqlTypes.generated.ts': { plugins: ['typescript'] },
+    'src/types/graphqlTypes.generated.ts': { plugins: ['typescript'] },
   },
   hooks: {
     afterOneFileWrite: [

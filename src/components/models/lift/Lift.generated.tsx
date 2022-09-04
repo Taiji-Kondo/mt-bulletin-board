@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-import type * as Types from '../../../types/graphql/graphqlTypes.generated';
+import type * as Types from '../../../types/graphqlTypes.generated';
 
 export type LiftsDetailFieldsFragment = {
   __typename?: 'Lift';
