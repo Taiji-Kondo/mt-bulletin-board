@@ -1,25 +1,13 @@
 import { Loader, Title } from '@mantine/core';
-import { lazy, Suspense } from 'react';
-import { gql } from 'urql';
+import { Suspense } from 'react';
 
-import { AllLifts, AllLiftsNameFields } from '@/components/models/lift/AllLifts';
+import { AllLifts } from '@/components/models/lift/AllLifts';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
-import { useAllLiftsPageQuery } from '@/pages/lift/index.page.generated';
+import { useLiftPage } from '@/pages/lift/hooks/useLiftPage';
 import type { NextPageWithLayoutType } from '@/types/NextLayoutType';
 
-gql`
-  ${AllLiftsNameFields}
-  query AllLiftsPage {
-    allLifts {
-      ...AllLiftsNameFields
-    }
-  }
-`;
-
 const AllLiftPage: NextPageWithLayoutType = () => {
-  const [{ data }, executeQuery] = useAllLiftsPageQuery();
-  // React.lazy example
-  const AllLiftsComponent = lazy(() => import('@/components/models/lift/LazyAllLifts'));
+  const { AllLiftsComponent, data, executeQuery } = useLiftPage();
 
   return (
     <>
