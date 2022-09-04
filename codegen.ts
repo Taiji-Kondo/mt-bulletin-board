@@ -1,5 +1,10 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
+/**
+ * near-operation-file
+ * @see https://www.the-guild.dev/graphql/codegen/docs/advanced/generated-files-colocation
+ **/
+
 const config: CodegenConfig = {
   documents: ['src/**/*.{ts,tsx}', '!**/__generated__/*.{ts,tsx}'],
   generates: {
