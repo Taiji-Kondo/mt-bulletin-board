@@ -1,4 +1,3 @@
-import type { NextPageWithLayoutType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { gql } from 'urql';
@@ -6,6 +5,7 @@ import { gql } from 'urql';
 import { Lift, LiftsDetailFields } from '@/components/models/lift/Lift';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 import { useLiftsPageQuery } from '@/pages/lift/[id]/index.page.generated';
+import type { NextPageWithLayoutType } from '@/types/NextLayoutType';
 
 gql`
   ${LiftsDetailFields}

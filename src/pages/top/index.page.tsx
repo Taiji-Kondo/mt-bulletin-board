@@ -1,9 +1,9 @@
 import { Button, Stack, Title } from '@mantine/core';
-import type { NextPageWithLayoutType } from 'next';
 
 import { BaseExternalLink } from '@/components/functional/link/BaseExternalLink';
 import { BaseLink } from '@/components/functional/link/BaseLink';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
+import type { NextPageWithLayoutType } from '@/types/NextLayoutType';
 
 const TopPage: NextPageWithLayoutType = () => {
   return (

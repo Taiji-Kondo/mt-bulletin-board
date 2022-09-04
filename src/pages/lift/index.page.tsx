@@ -1,11 +1,11 @@
 import { Loader, Title } from '@mantine/core';
-import type { NextPageWithLayoutType } from 'next';
 import { lazy, Suspense } from 'react';
 import { gql } from 'urql';
 
 import { AllLifts, AllLiftsNameFields } from '@/components/models/lift/AllLifts';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
 import { useAllLiftsPageQuery } from '@/pages/lift/index.page.generated';
+import type { NextPageWithLayoutType } from '@/types/NextLayoutType';
 
 gql`
   ${AllLiftsNameFields}
