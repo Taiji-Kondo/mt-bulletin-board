@@ -93,6 +93,13 @@
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }
+    },
+    {
+      "files": ["src/**/*.generated.{ts,tsx}"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off",
+        "no-restricted-imports": "off"
+      }
     }
   ],
   "settings": {

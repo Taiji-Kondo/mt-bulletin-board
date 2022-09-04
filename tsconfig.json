@@ -19,6 +19,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/!(*.generated).{ts,tsx}"],
-  "exclude": ["node_modules", "**/*.generated.tsx"]
+  "include": ["next-env.d.ts", "**/*.{ts,tsx}"],
+  "exclude": ["node_modules"]
 }

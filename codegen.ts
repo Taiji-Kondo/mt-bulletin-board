@@ -10,9 +10,18 @@ const config: CodegenConfig = {
       config: { withHooks: true },
       plugins: ['typescript-operations', 'typescript-urql'],
       preset: 'near-operation-file',
-      presetConfig: { baseTypesPath: 'types.ts', extension: '.generated.tsx' },
+      presetConfig: {
+        baseTypesPath: 'types/graphql/graphqlTypes.generated.ts',
+        extension: '.generated.tsx',
+      },
     },
-    'src/generated/types.ts': { plugins: ['typescript'] },
+    'src/types/graphql/graphqlTypes.generated.ts': { plugins: ['typescript'] },
+  },
+  hooks: {
+    afterOneFileWrite: [
+      'prettier --write src/**/*.generated.{ts,tsx}',
+      'eslint src --ext .generated.ts,.generated.tsx --fix',
+    ],
   },
   schema: 'src/graphql/schema.graphql',
 };
