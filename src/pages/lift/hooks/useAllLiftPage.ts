@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { gql } from 'urql';
 
 import { AllLiftsNameFields } from '@/components/models/lift/AllLifts';
-import { useAllLiftsPageQuery } from '@/pages/lift/hooks/useAllLiftPage.generated';
+import { useAllLiftsPageQuery } from '@/pages/lift/hooks/__generated__/useAllLiftPage.generated';
 
 gql`
   ${AllLiftsNameFields}

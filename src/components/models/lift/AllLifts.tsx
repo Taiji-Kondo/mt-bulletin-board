@@ -3,7 +3,7 @@ import type { OperationContext } from 'urql';
 import { gql } from 'urql';
 
 import { BaseLink } from '@/components/functional/link/BaseLink';
-import type { AllLiftsNameFieldsFragment } from '@/components/models/lift/AllLifts.generated';
+import type { AllLiftsNameFieldsFragment } from '@/components/models/lift/__generated__/AllLifts.generated';
 
 export const AllLiftsNameFields = gql`
   fragment AllLiftsNameFields on Lift {

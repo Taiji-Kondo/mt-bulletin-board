@@ -2,8 +2,8 @@ import type { NextLinkProps } from '@mantine/next/lib/NextLink';
 import Link from 'next/link';
 import type { UrlObject } from 'url';
 
-import type { PagesPath } from '@/constants/path/$path';
-import { pagesPath } from '@/constants/path/$path';
+import type { PagesPath } from '@/__generated__/path/$path';
+import { pagesPath } from '@/__generated__/path/$path';
 
 // GenerateされたpagesPathからkeyと$url部分の型を抽出
 type PagesPathKeysType = keyof PagesPath;

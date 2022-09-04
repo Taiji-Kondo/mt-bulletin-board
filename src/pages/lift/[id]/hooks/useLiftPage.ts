@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { gql } from 'urql';
 
 import { LiftsDetailFields } from '@/components/models/lift/Lift';
-import { useLiftsPageQuery } from '@/pages/lift/[id]/hooks/useLiftPage.generated';
+import { useLiftsPageQuery } from '@/pages/lift/[id]/hooks/__generated__/useLiftPage.generated';
 
 gql`
   ${LiftsDetailFields}

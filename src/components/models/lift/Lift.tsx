@@ -1,7 +1,7 @@
 import { Stack, Text, Title } from '@mantine/core';
 import { gql } from 'urql';
 
-import type { LiftsDetailFieldsFragment } from '@/components/models/lift/Lift.generated';
+import type { LiftsDetailFieldsFragment } from '@/components/models/lift/__generated__/Lift.generated';
 
 export const LiftsDetailFields = gql`
   fragment LiftsDetailFields on Lift {
