@@ -39,4 +39,4 @@ yarn-error.log*
 /.idea
 
 # generated
-/src/generated
+**/__generated__/*

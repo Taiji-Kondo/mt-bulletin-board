@@ -1,7 +1,7 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-  documents: 'src/**/!(*.generated).{ts,tsx}',
+  documents: ['src/**/*.{ts,tsx}', '!**/__generated__/*.{ts,tsx}'],
   generates: {
     'graphql.schema.json': {
       plugins: ['introspection'],
@@ -11,17 +11,12 @@ const config: CodegenConfig = {
       plugins: ['typescript-operations', 'typescript-urql'],
       preset: 'near-operation-file',
       presetConfig: {
-        baseTypesPath: 'types/graphqlTypes.generated.ts',
+        baseTypesPath: '__generated__/graphql/graphqlTypes.ts',
         extension: '.generated.tsx',
+        folder: '__generated__',
       },
     },
-    'src/types/graphqlTypes.generated.ts': { plugins: ['typescript'] },
-  },
-  hooks: {
-    afterOneFileWrite: [
-      'prettier --write src/**/*.generated.{ts,tsx}',
-      'eslint src --ext .generated.ts,.generated.tsx --fix',
-    ],
+    'src/__generated__/graphql/graphqlTypes.ts': { plugins: ['typescript'] },
   },
   schema: 'src/graphql/schema.graphql',
 };
