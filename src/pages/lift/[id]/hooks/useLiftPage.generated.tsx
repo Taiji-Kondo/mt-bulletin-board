@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 import * as Urql from 'urql';
 
-import { LiftsDetailFieldsFragmentDoc } from '../../../components/models/lift/Lift.generated';
-import type * as Types from '../../../types/graphql/graphqlTypes.generated';
+import { LiftsDetailFieldsFragmentDoc } from '../../../../components/models/lift/Lift.generated';
+import type * as Types from '../../../../types/graphql/graphqlTypes.generated';
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 export type LiftsPageQueryVariables = Types.Exact<{
