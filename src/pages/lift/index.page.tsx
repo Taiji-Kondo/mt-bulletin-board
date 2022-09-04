@@ -3,11 +3,11 @@ import { Suspense } from 'react';
 
 import { AllLifts } from '@/components/models/lift/AllLifts';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
-import { useLiftPage } from '@/pages/lift/hooks/useLiftPage';
+import { useAllLiftPage } from '@/pages/lift/hooks/useAllLiftPage';
 import type { NextPageWithLayoutType } from '@/types/NextLayoutType';
 
 const AllLiftPage: NextPageWithLayoutType = () => {
-  const { AllLiftsComponent, data, executeQuery } = useLiftPage();
+  const { AllLiftsComponent, data, executeQuery } = useAllLiftPage();
 
   return (
     <>

@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { gql } from 'urql';
 
 import { AllLiftsNameFields } from '@/components/models/lift/AllLifts';
-import { useAllLiftsPageQuery } from '@/pages/lift/hooks/useLiftPage.generated';
+import { useAllLiftsPageQuery } from '@/pages/lift/hooks/useAllLiftPage.generated';
 
 gql`
   ${AllLiftsNameFields}
@@ -13,7 +13,7 @@ gql`
   }
 `;
 
-export const useLiftPage = () => {
+export const useAllLiftPage = () => {
   const [{ data }, executeQuery] = useAllLiftsPageQuery();
 
   // React.lazy example
