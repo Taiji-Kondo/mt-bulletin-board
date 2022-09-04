@@ -1,29 +1,9 @@
-import { Button, Stack, Title } from '@mantine/core';
-
-import { BaseExternalLink } from '@/components/functional/link/BaseExternalLink';
-import { BaseLink } from '@/components/functional/link/BaseLink';
 import { WithHeaderLayout } from '@/layouts/WithHeaderLayout';
+import { TopPageContent } from '@/pages/top/index.content';
 import type { NextPageWithLayoutType } from '@/types/NextLayoutType';
 
 const TopPage: NextPageWithLayoutType = () => {
-  return (
-    <>
-      <Title order={1}>Top</Title>
-      <Stack>
-        <BaseLink href={(path) => path.lift.$url()}>
-          <Button component={'a'}>All Lists</Button>
-        </BaseLink>
-        <BaseLink href={(path) => path.user.$url()}>
-          <Button component={'a'}>User</Button>
-        </BaseLink>
-        <BaseLink href={(path) => path.dashboard.$url()}>
-          <Button component={'a'}>Dashboard</Button>
-        </BaseLink>
-
-        <BaseExternalLink href={'https://www.google.com/'}>Google</BaseExternalLink>
-      </Stack>
-    </>
-  );
+  return <TopPageContent />;
 };
 
 TopPage.getLayout = (page) => <WithHeaderLayout>{page}</WithHeaderLayout>;
