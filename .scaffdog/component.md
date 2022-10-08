@@ -1,16 +1,23 @@
 ---
 name: 'component'
 root: '.'
-output: '**/*'
-ignore: []
+output: './src/components/'
 questions:
-  value: 'Please enter any text.'
+  componentType:
+    message: 'Please select a component type.' 
+    choices:
+      - 'features'
+      - 'elements'
+      - 'ui'
+  filename: 'Please enter a component name.'
 ---
 
-# `{{ inputs.value }}.md`
+# `{{ inputs.componentType }}/{{ inputs.filename | pascal }}.tsx`
 
-```markdown
-Let's make a document!
-See scaffdog documentation for details.
-https://scaff.dog/docs/templates
+```typescript
+type {{ inputs.filename | pascal }}PropsType = {};
+
+export const {{ inputs.filename | pascal }} = ({}: {{ inputs.filename | pascal }}PropsType) => {
+  return <></>;
+};
 ```
